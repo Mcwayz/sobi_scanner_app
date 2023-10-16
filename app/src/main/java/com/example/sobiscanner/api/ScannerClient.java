@@ -7,6 +7,7 @@ import com.example.sobiscanner.model.DispatchResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Headers;
 
@@ -19,6 +20,10 @@ public interface ScannerClient {
             "Accept: application/json",
             "Content-Type: application/json"
     })
+
+    // Get Product Sections
+    @GET("/api/getSections/")
+    Call<String> getSections();
 
     // Add Product To Inventory
     @POST("/api/addProduct/")
