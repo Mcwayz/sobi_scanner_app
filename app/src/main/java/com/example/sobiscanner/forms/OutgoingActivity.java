@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.sobiscanner.R;
 
-public class ResultsActivity extends AppCompatActivity {
+public class OutgoingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_results);
+        setContentView(R.layout.activity_outgoing);
     }
 }

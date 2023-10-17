@@ -1,5 +1,7 @@
 package com.example.sobiscanner.api;
 
+import com.example.sobiscanner.model.ProductRequest;
+import com.example.sobiscanner.model.ProductResponse;
 import com.example.sobiscanner.model.ScannerRequest;
 import com.example.sobiscanner.model.DispatchRequest;
 import com.example.sobiscanner.model.ScannerResponse;
@@ -32,5 +34,9 @@ public interface ScannerClient {
     // Dispatch Product
     @POST("/api/dispatchProduct/")
     Call<DispatchResponse> postDispatch(@Body DispatchRequest dispatchRequest);
+
+    // Get Product ID
+    @POST("/api/dispatchProduct/")
+    Call<ProductResponse> postBarcode(@Body ProductRequest productRequest);
 
 }

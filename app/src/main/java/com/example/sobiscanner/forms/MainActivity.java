@@ -1,8 +1,11 @@
 package com.example.sobiscanner.forms;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.sobiscanner.R;
 
@@ -13,6 +16,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+    private CardView cvIn, cvOut;
     public static String getCurrentDate() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("EEEE, MMMM d'" + getDayOfMonthSuffix(Calendar.getInstance().get(Calendar.DAY_OF_MONTH)) + "'", Locale.getDefault());
         return dateFormat.format(new Date());
@@ -38,6 +42,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        cvIn = (CardView) findViewById(R.id.cv_in);
+        cvOut = (CardView) findViewById(R.id.cv_out);
+
+        cvIn.setOnClickListener(v -> {
+            Intent incoming = new Intent(MainActivity.this, IncomingActivity.class);
+            startActivity(incoming);
+            finish();
+        });
+
+        cvOut.setOnClickListener(v -> {
+            Intent outgoing = new Intent(MainActivity.this, OutgoingActivity.class);
+            startActivity(outgoing);
+            finish();
+        });
     }
 
 
