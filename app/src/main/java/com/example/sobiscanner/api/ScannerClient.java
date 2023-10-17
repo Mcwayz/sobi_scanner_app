@@ -16,7 +16,7 @@ import retrofit2.http.Headers;
 
 public interface ScannerClient {
 
-    String base_url = "http://127.0.0.1:8000";
+    String base_url = "http://192.168.0.80:8000";
 
     @Headers({
             "Accept: application/json",
@@ -28,7 +28,7 @@ public interface ScannerClient {
     Call<String> getSections();
 
     // Add Product To Inventory
-    @POST("/api/addProduct/")
+    @POST("/api/addInventory/")
     Call<ScannerResponse> postProduct(@Body ScannerRequest scanRequest);
 
     // Dispatch Product
@@ -36,7 +36,7 @@ public interface ScannerClient {
     Call<DispatchResponse> postDispatch(@Body DispatchRequest dispatchRequest);
 
     // Get Product ID
-    @POST("/api/dispatchProduct/")
+    @POST("/api/getProductId/")
     Call<ProductResponse> postBarcode(@Body ProductRequest productRequest);
 
 }
