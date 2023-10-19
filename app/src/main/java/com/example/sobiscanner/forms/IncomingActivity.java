@@ -46,7 +46,11 @@ public class IncomingActivity extends AppCompatActivity {
         quantity = findViewById(R.id.tf_product_quantity);
         btn_scan = findViewById(R.id.btn_get_price);
 
-        imgBack.setOnClickListener(v -> finish());
+        imgBack.setOnClickListener(view -> {
+            Intent incoming = new Intent(IncomingActivity.this, MainActivity.class);
+            startActivity(incoming);
+            finish();
+        });
 
         btn_scan.setOnClickListener(v -> scanCode());
         btn_stock.setOnClickListener(view -> processStock(addStock()));

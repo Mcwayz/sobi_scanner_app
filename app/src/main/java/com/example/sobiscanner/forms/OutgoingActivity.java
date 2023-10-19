@@ -40,11 +40,17 @@ public class OutgoingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_outgoing);
+        imgBack = findViewById(R.id.img_back);
         btn_out = findViewById(R.id.btn_out_stock);
         btn_scan = findViewById(R.id.btn_get_scan);
         barcode = findViewById(R.id.tf_product_barcode);
         quantity = findViewById(R.id.tf_product_quantity);
         btn_scan.setOnClickListener(view -> scanCode());
+        imgBack.setOnClickListener(view -> {
+            Intent incoming = new Intent(OutgoingActivity.this, MainActivity.class);
+            startActivity(incoming);
+            finish();
+        });
         btn_out.setOnClickListener(view -> processStock(outStock()));
     }
 
