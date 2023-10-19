@@ -1,4 +1,4 @@
-package com.example.sobiscanner.model;
+package com.example.sobiscanner.scanner;
 
 import com.journeyapps.barcodescanner.CaptureActivity;
 

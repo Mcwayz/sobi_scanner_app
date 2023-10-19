@@ -81,6 +81,7 @@ public class IncomingActivity extends AppCompatActivity {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
+
     // API Call To Retrieve Product ID and Name
     private void getProductID(ProductRequest productRequest) {
         Call<ProductResponse> call = ApiService.getProductApiService().postBarcode(productRequest);

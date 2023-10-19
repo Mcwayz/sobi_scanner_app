@@ -32,6 +32,7 @@ android {
 }
 
 dependencies {
+    implementation("com.google.firebase:firebase-inappmessaging:20.3.5")
     testImplementation("junit:junit:4.13.2")
     implementation ("androidx.cardview:cardview:1.0.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
